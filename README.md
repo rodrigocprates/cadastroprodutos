@@ -14,4 +14,8 @@
 
 > Adicionar jar do H2 no classpath
 
--- Todo: adicionar connection pool
+> Run Main.java
+
+## TODO
+
+- Exemplo commit/rollback

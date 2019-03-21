@@ -12,8 +12,6 @@ import java.util.List;
 
 public class ProdutoDAO {
 
-    // TODO fechar conexões / adicionar connection pool
-
     private Connection connection;
 
     public ProdutoDAO(Connection connection) {

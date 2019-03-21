@@ -1,6 +1,7 @@
 package br.com.curso;
 
 import br.com.curso.dao.ProdutoDAO;
+import br.com.curso.jdbc.ConnectionPool;
 import br.com.curso.model.Produto;
 
 import java.sql.Connection;
@@ -11,7 +12,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) throws SQLException {
-        Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "");
+        Connection connection = ConnectionPool.getConnection();
 
         // Salvar
         Produto prod = new Produto("Mp3 Player", "Eletrônicos");
