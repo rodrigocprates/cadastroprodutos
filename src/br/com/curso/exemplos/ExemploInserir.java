@@ -15,7 +15,7 @@ public class ExemploInserir {
         Connection conexao = new ConnectionPool("jdbc:h2:~/test", "sa", "").getConexao();
         CategoriaDAO categoriaDAO = new CategoriaDAO(conexao);
 
-        Categoria categoria = new Categoria("xxxxx");
+        Categoria categoria = new Categoria("Eletrônicos");
 
         Produto prod = new Produto("Caixa Mp3", categoria);
 
