@@ -8,19 +8,17 @@ import java.sql.SQLException;
 
 public class ConnectionPool {
 
-    private static final String JBDC_URL = "jdbc:h2:~/test";
-    private static final String USER = "sa";
-    private static final String PASS = "";
-    private static final DataSource dataSource;
+    private String JBDC_URL;
+    private String USER;
+    private String PASS;
+    private DataSource dataSource;
 
-    static {
-        System.out.print("Iniciando Connection Pool..\n");
-        JdbcConnectionPool pool =  JdbcConnectionPool.create(JBDC_URL, USER, PASS);
-        dataSource = pool;
-        System.out.println("Connection Pool ok..\n");
+    public ConnectionPool(String jdbcUrl, String usuario, String senha) {
+        System.out.println("Criando Pool de conexões..");
+        dataSource = JdbcConnectionPool.create(jdbcUrl, usuario, senha);
     }
 
-    public static Connection getConnection() throws SQLException {
+    public Connection getConexao() throws SQLException {
         System.out.print("Resolvendo conexão..\n");
         Connection connection = dataSource.getConnection();
         System.out.println("Conexão ok..\n");

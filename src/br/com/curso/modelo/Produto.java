@@ -1,17 +1,16 @@
-package br.com.curso.model;
+package br.com.curso.modelo;
 
 public class Produto {
 
     private Long id;
     private String descricao;
-    private String categoria;
+    private Categoria categoria;
 
-    public Produto(String descricao, String categoria) {
-        this.descricao = descricao;
-        this.categoria = categoria;
+    public Produto(String descricao, Categoria categoria) {
+        this(null, descricao, categoria);
     }
 
-    public Produto(Long id, String descricao, String categoria) {
+    public Produto(Long id, String descricao, Categoria categoria) {
         this.id = id;
         this.descricao = descricao;
         this.categoria = categoria;
@@ -33,11 +32,11 @@ public class Produto {
         this.descricao = descricao;
     }
 
-    public String getCategoria() {
+    public Categoria getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(String categoria) {
+    public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
 

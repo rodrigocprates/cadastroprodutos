@@ -8,14 +8,17 @@
 
 ### Criar Tabela produtos:
 
-> CREATE TABLE PRODUTOS (ID INT PRIMARY KEY, DESCRICAO VARCHAR(500), CATEGORIA VARCHAR(100));
+> CREATE TABLE CATEGORIAS (ID INT PRIMARY KEY AUTO_INCREMENT, NOME VARCHAR(500));
+
+> CREATE TABLE PRODUTOS (
+    ID INT PRIMARY KEY AUTO_INCREMENT, 
+    DESCRICAO VARCHAR(500), 
+    ID_CATEGORIA VARCHAR(100),
+    FOREIGN KEY (ID_CATEGORIA) references CATEGORIAS(ID)
+);
 
 ## App
 
 > Adicionar jar do H2 no classpath
 
-> Run Main.java
-
-## TODO
-
-- Exemplo commit/rollback
+> Executar classes "Main" do pacote "exemplos"
